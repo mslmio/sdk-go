@@ -3,7 +3,7 @@ package email_verify
 import (
 	"net/http"
 
-	"github.com/mslmdev/sdk-go/lib"
+	"github.com/mslmio/sdk-go/lib"
 )
 
 var (

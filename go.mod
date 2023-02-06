@@ -1,4 +1,4 @@
-module github.com/mslmdev/sdk-go
+module github.com/mslmio/sdk-go
 
 go 1.18
 

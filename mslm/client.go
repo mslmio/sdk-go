@@ -3,8 +3,8 @@ package mslm
 import (
 	"net/http"
 
-	"github.com/mslmdev/sdk-go/email_verify"
-	"github.com/mslmdev/sdk-go/lib"
+	"github.com/mslmio/sdk-go/email_verify"
+	"github.com/mslmio/sdk-go/lib"
 )
 
 var (

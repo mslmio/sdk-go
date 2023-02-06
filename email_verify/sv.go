@@ -3,7 +3,7 @@ package email_verify
 import (
 	"net/url"
 
-	"github.com/mslmdev/sdk-go/lib"
+	"github.com/mslmio/sdk-go/lib"
 )
 
 type SingleVerifyReqOpts struct {

@@ -1,6 +1,6 @@
 # Mslm Go SDK
 
-[![Go Reference](https://pkg.go.dev/badge/github.com/mslmdev/sdk-go)](https://pkg.go.dev/github.com/mslmdev/sdk-go)
+[![Go Reference](https://pkg.go.dev/badge/github.com/mslmio/sdk-go)](https://pkg.go.dev/github.com/mslmio/sdk-go)
 
 The official Go SDK for Mslm APIs.
 
@@ -11,7 +11,7 @@ The official Go SDK for Mslm APIs.
 ## Installation
 
 ```bash
-go get github.com/mslmdev/sdk-go
+go get github.com/mslmio/sdk-go
 ```
 
 ## Setting Up
@@ -25,7 +25,7 @@ go mod init
 Install the package:
 
 ```bash
-go get github.com/mslmdev/sdk-go
+go get github.com/mslmio/sdk-go
 ```
 
 Reference the package's main entrypoint in your program and write some code:
@@ -34,7 +34,7 @@ Reference the package's main entrypoint in your program and write some code:
 import (
 	"fmt"
 
-	"github.com/mslmdev/sdk-go/mslm"
+	"github.com/mslmio/sdk-go/mslm"
 )
 
 func main() {

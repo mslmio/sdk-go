@@ -4,8 +4,8 @@ import (
 	"os"
 	"testing"
 
-	"github.com/mslmdev/sdk-go/email_verify"
-	"github.com/mslmdev/sdk-go/mslm"
+	"github.com/mslmio/sdk-go/email_verify"
+	"github.com/mslmio/sdk-go/mslm"
 
 	"github.com/stretchr/testify/require"
 )
