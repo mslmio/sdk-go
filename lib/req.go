@@ -1,6 +1,7 @@
 package lib
 
 import (
+	"bytes"
 	"context"
 	"encoding/json"
 	"io"
@@ -95,6 +96,7 @@ func (c *Client) PrepareUrl(
 func (c *Client) ReqAndResp(
 	method string,
 	tUrl *url.URL,
+	data []byte,
 	respData interface{},
 	opt *ReqOpts,
 ) error {
@@ -102,7 +104,7 @@ func (c *Client) ReqAndResp(
 		opt.Context,
 		method,
 		tUrl.String(),
-		nil,
+		bytes.NewReader(data),
 	)
 	if err != nil {
 		return err

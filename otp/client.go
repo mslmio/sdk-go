@@ -1,11 +1,9 @@
-package mslm
+package otp
 
 import (
 	"net/http"
 
-	"github.com/mslmio/sdk-go/email_verify"
 	"github.com/mslmio/sdk-go/lib"
-	"github.com/mslmio/sdk-go/otp"
 )
 
 var (
@@ -19,12 +17,6 @@ var (
 type Client struct {
 	// Common client system.
 	C *lib.Client
-
-	// The Email Verify API client.
-	EmailVerify *email_verify.Client
-
-	// The Otp client.
-	Otp *otp.Client
 }
 
 func Init(
@@ -32,8 +24,6 @@ func Init(
 ) *Client {
 	c := &Client{}
 	c.C = new(lib.Client)
-	c.EmailVerify = email_verify.Init(apiKey)
-	c.Otp = otp.Init(DefaultApiKey)
 	c.SetHttpClient(http.DefaultClient)
 	c.SetBaseUrl(DefaultBaseUrl)
 	c.SetUserAgent(DefaultUserAgent)
@@ -47,8 +37,6 @@ func InitDefaults() *Client {
 
 func (c *Client) SetHttpClient(httpClient *http.Client) {
 	c.C.SetHttpClient(httpClient)
-	c.EmailVerify.SetHttpClient(httpClient)
-	c.Otp.SetHttpClient(httpClient)
 }
 
 func SetHttpClient(httpClient *http.Client) {
@@ -56,19 +44,7 @@ func SetHttpClient(httpClient *http.Client) {
 }
 
 func (c *Client) SetBaseUrl(baseUrlStr string) error {
-	if err := c.C.SetBaseUrl(baseUrlStr); err != nil {
-		return err
-	}
-
-	if err := c.EmailVerify.SetBaseUrl(baseUrlStr); err != nil {
-		return err
-	}
-
-	if err := c.Otp.SetBaseUrl(baseUrlStr); err != nil {
-		return err
-	}
-
-	return nil
+	return c.C.SetBaseUrl(baseUrlStr)
 }
 
 func SetBaseUrl(baseUrlStr string) error {
@@ -77,8 +53,6 @@ func SetBaseUrl(baseUrlStr string) error {
 
 func (c *Client) SetUserAgent(userAgent string) {
 	c.C.SetUserAgent(userAgent)
-	c.EmailVerify.SetUserAgent(userAgent)
-	c.Otp.SetUserAgent(userAgent)
 }
 
 func SetUserAgent(userAgent string) {
@@ -87,8 +61,6 @@ func SetUserAgent(userAgent string) {
 
 func (c *Client) SetApiKey(apiKey string) {
 	c.C.SetApiKey(apiKey)
-	c.EmailVerify.SetApiKey(apiKey)
-	c.Otp.SetApiKey(apiKey)
 }
 
 func SetApiKey(apiKey string) {

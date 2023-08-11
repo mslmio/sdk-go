@@ -60,7 +60,7 @@ func (c *Client) SingleVerify(
 
 	// Get data.
 	svResp := &SingleVerifyResp{}
-	if err := c.C.ReqAndResp("GET", tUrl, svResp, &opt.ReqOpts); err != nil {
+	if err := c.C.ReqAndResp("GET", tUrl, nil, svResp, &opt.ReqOpts); err != nil {
 		return nil, err
 	}
 
