@@ -2,7 +2,6 @@ package otp
 
 import (
 	"encoding/json"
-	"net/url"
 
 	"github.com/mslmio/sdk-go/lib"
 )
