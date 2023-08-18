@@ -12,7 +12,7 @@ var (
 	DefaultClient     *Client
 	DefaultHttpClient = http.DefaultClient
 	DefaultBaseUrl    = "https://mslm.io"
-	DefaultUserAgent  = "mslm/go/1.0.0"
+	DefaultUserAgent  = "mslm/go/1.1.0"
 	DefaultApiKey     = ""
 )
 
