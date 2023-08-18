@@ -35,7 +35,6 @@ func (c *Client) Verify(
 
 	// Prepare URL.
 	qp := map[string]string{}
-	tUrl, _ := url.Parse("/api/v1/send")
 	tUrl, err := c.C.PrepareUrl("/api/otp/v1/token_verify", qp, &opt.ReqOpts)
 	if err != nil {
 		return nil, err

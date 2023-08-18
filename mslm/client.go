@@ -23,7 +23,7 @@ type Client struct {
 	// The Email Verify API client.
 	EmailVerify *email_verify.Client
 
-	// The Otp client.
+	// The OTP client.
 	Otp *otp.Client
 }
 
