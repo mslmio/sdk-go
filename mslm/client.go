@@ -12,7 +12,7 @@ var (
 	DefaultClient     *Client
 	DefaultHttpClient = http.DefaultClient
 	DefaultBaseUrl    = "https://mslm.io"
-	DefaultUserAgent  = "mslm/go/1.0.0"
+	DefaultUserAgent  = "mslm/go/1.1.0"
 	DefaultApiKey     = ""
 )
 
@@ -23,7 +23,7 @@ type Client struct {
 	// The Email Verify API client.
 	EmailVerify *email_verify.Client
 
-	// The Otp client.
+	// The OTP client.
 	Otp *otp.Client
 }
 
