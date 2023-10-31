@@ -20,18 +20,18 @@ type SingleVerifyReqOpts struct {
 }
 
 type SingleVerifyResp struct {
-	Email      string                `json:"email" csv:"email"`
-	Username   string                `json:"username" csv:"username"`
-	Domain     string                `json:"domain" csv:"domain"`
-	Malformed  bool                  `json:"malformed" csv:"malformed"`
-	Suggestion string                `json:"suggestion" csv:"suggestion"`
-	Status     string                `json:"status" csv:"status"`
-	HasMailbox bool                  `json:"has_mailbox" csv:"has_mailbox"`
-	AcceptAll  bool                  `json:"accept_all" csv:"accept_all"`
-	Disposable bool                  `json:"disposable" csv:"disposable"`
-	Free       bool                  `json:"free" csv:"free"`
-	Role       bool                  `json:"role" csv:"role"`
-	Mx         []*SingleVerifyRespMx `json:"mx" csv:"mx, inline"`
+	Email      string                    `json:"email" csv:"email"`
+	Username   string                    `json:"username" csv:"username"`
+	Domain     string                    `json:"domain" csv:"domain"`
+	Malformed  bool                      `json:"malformed" csv:"malformed"`
+	Suggestion string                    `json:"suggestion" csv:"suggestion"`
+	Status     string                    `json:"status" csv:"status"`
+	HasMailbox bool                      `json:"has_mailbox" csv:"has_mailbox"`
+	AcceptAll  bool                      `json:"accept_all" csv:"accept_all"`
+	Disposable bool                      `json:"disposable" csv:"disposable"`
+	Free       bool                      `json:"free" csv:"free"`
+	Role       bool                      `json:"role" csv:"role"`
+	Mx         []*SingleVerifyRespMxWrap `json:"mx" csv:"mx_, inline"`
 }
 
 type SingleVerifyRespMx struct {
