@@ -1,7 +1,9 @@
 package email_verify
 
 import (
+	"fmt"
 	"net/url"
+	"strings"
 
 	"github.com/mslmio/sdk-go/lib"
 )
@@ -18,23 +20,42 @@ type SingleVerifyReqOpts struct {
 }
 
 type SingleVerifyResp struct {
-	Email      string                `json:"email"`
-	Username   string                `json:"username"`
-	Domain     string                `json:"domain"`
-	Malformed  bool                  `json:"malformed"`
-	Suggestion string                `json:"suggestion"`
-	Status     string                `json:"status"`
-	HasMailbox bool                  `json:"has_mailbox"`
-	AcceptAll  bool                  `json:"accept_all"`
-	Disposable bool                  `json:"disposable"`
-	Free       bool                  `json:"free"`
-	Role       bool                  `json:"role"`
-	Mx         []*SingleVerifyRespMx `json:"mx"`
+	Email      string                    `json:"email" csv:"email"`
+	Username   string                    `json:"username" csv:"username"`
+	Domain     string                    `json:"domain" csv:"domain"`
+	Malformed  bool                      `json:"malformed" csv:"malformed"`
+	Suggestion string                    `json:"suggestion" csv:"suggestion"`
+	Status     string                    `json:"status" csv:"status"`
+	HasMailbox bool                      `json:"has_mailbox" csv:"has_mailbox"`
+	AcceptAll  bool                      `json:"accept_all" csv:"accept_all"`
+	Disposable bool                      `json:"disposable" csv:"disposable"`
+	Free       bool                      `json:"free" csv:"free"`
+	Role       bool                      `json:"role" csv:"role"`
+	Mx         []*SingleVerifyRespMxWrap `json:"mx" csv:"mx"`
 }
 
 type SingleVerifyRespMx struct {
 	Host string `json:"host"`
 	Pref int    `json:"pref"`
+}
+
+type SingleVerifyRespMxWrap []*SingleVerifyRespMx
+
+func (mx SingleVerifyRespMxWrap) MarshalCSV() ([]byte, error) {
+	var csvData strings.Builder
+
+	csvData.WriteString("[")
+	for i, item := range mx {
+		itemStr := fmt.Sprintf(`{"host":"%s","pref":%d}`, item.Host, item.Pref)
+		csvData.WriteString(itemStr)
+
+		if i < len(mx)-1 {
+			csvData.WriteString(", ")
+		}
+	}
+	csvData.WriteString("]")
+
+	return []byte(csvData.String()), nil
 }
 
 func (c *Client) SingleVerify(
