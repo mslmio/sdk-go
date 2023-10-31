@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.2
+
+- Bugfix for CSV meta field issue in 1.1.1.
+
 ## 1.1.1
 
 - Add CSV meta fields to Email Verify SDK.
