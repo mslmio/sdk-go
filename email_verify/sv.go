@@ -31,7 +31,7 @@ type SingleVerifyResp struct {
 	Disposable bool                   `json:"disposable" csv:"disposable"`
 	Free       bool                   `json:"free" csv:"free"`
 	Role       bool                   `json:"role" csv:"role"`
-	Mx         SingleVerifyRespMxWrap `json:"mx" csv:"mx_, inline"`
+	Mx         SingleVerifyRespMxWrap `json:"mx" csv:"mx"`
 }
 
 type SingleVerifyRespMx struct {

@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.1
+
+- Add CSV meta fields to Email Verify SDK.
+
 ## 1.1.0
 
 - Initial release of OTP SDK.
