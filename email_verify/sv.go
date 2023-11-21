@@ -32,6 +32,8 @@ type SingleVerifyResp struct {
 	Free       bool                   `json:"free" csv:"free"`
 	Role       bool                   `json:"role" csv:"role"`
 	Mx         SingleVerifyRespMxWrap `json:"mx" csv:"mx"`
+	Fake       bool                   `json:"fake" csv:"fake"`
+	Spamtrap   bool                   `json:"spamtrap" csv:"spamtrap"`
 }
 
 type SingleVerifyRespMx struct {
