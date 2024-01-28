@@ -14,7 +14,7 @@ The official Go SDK for Mslm APIs.
 go get github.com/mslmio/sdk-go
 ```
 
-## Setting Up
+## Usage
 
 Start a local Go project if you don't have one:
 
