@@ -8,6 +8,10 @@ The official Go SDK for Mslm APIs.
 
 - Go 1.18 or above.
 
+## Authentication
+
+Mslm's APIs require an API key. If you don't have one, please read [Authentication](https://mslm.io/docs/api/authentication) to understand how to get an API key before continuing.
+
 ## Installation
 
 ```bash
