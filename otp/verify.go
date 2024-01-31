@@ -17,9 +17,9 @@ type OtpTokenVerifyResp struct {
 }
 
 type OtpTokenVerifyReq struct {
-	Phone string `json:"phone"`
-	Token string `json:"token"`
-	Consume *bool `json:"consume"`
+	Phone   string `json:"phone"`
+	Token   string `json:"token"`
+	Consume *bool  `json:"consume"`
 }
 
 func (c *Client) Verify(
